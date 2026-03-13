@@ -1,32 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="bebidas.css">
-    <link rel="stylesheet" href="salgados.css">
-    <link rel="stylesheet" href="doces.css">
-    <title>Onda de Sabor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siteondadesabor</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <div class="caixa">
-            <h1 class="logo">
-                <p id="nome_empresa">Onda de Sabor</p>
-            </h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="doces.html">Doces</a></li>
-                    <li><a href="bebidas.html">Bebidas</a></li>
-                    <li><a href="salgados.html">Salgados </a></li>
-                </ul>
-            </nav>
+    <h1>Controle de Vendas - Salgados</h1>
+    <div class="container">
+        <div class="produtos">
+            <h2>Produtos</h2>
+            <div class="grid">
+                <div class="produto" onclick="adicionar('Coxinha', 5)">
+                    Coxinha<br>R$5,00
+                </div>
+                <div class="produto" onclick="adicionar('Pastel', 6)">
+                    Pastel<br>R$6,00
+                </div>
+                <div class="produto" onclick="adicionar('Enroladinho', 4)">
+                    Enroladinho<br>R$4,00
+                </div>
+                <div class="produto" onclick="adicionar('Kibe', 5)">
+                    Kibe<br>R$5,00
+                </div>
+            </div>
         </div>
+        <div class="historico">
+            <h2>Histórico</h2>
+            <ul id="lista"></ul>
+            <div class="total">
+                Total: R$ <span id="total">0.00</span>
+            </div>
 
-    </header>
-
+            <button onclick="limpar()">Limpar Histórico</button>
+            <button onclick="exportarCSV()">Exportar para Excel</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
